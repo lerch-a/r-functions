@@ -1,14 +1,16 @@
-#
+################################################################################
+# By Anita Lerch
+# May 2016
 # This code is subject to the terms and conditions defined in the GPLv3 license.
-#
+################################################################################
 
 plotHaplotypesLongitutinalPerPatient <- function(studyIdInfo, alleles, title, timepointUnit=c("days","weeks"), xAxisMarks=c(0,5,10,15,20,25,30,35,40)){
   
   timepointUnit <- match.arg(timepointUnit)
   
-  timepoint <- studyIdInfo$timepoint # child$StudyDay/7
+  timepoint <- studyIdInfo$timepoint
   treatment <- studyIdInfo$treatment
-  qpcr  <- studyIdInfo$qpcr # child$pf_qpcr
+  qpcr  <- studyIdInfo$qpcr
   
   a <- unique(unlist(alleles))
   a <- sort(a[!is.na(a)])
